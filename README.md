@@ -65,7 +65,7 @@ az login
 export SUBSCRIPTION=$(az account show --query id -o tsv)
 export TENANT=$(az account show --query tenantId -o tsv)
 export RG="rg-items-app"
-export LOCATION="eastus"
+export LOCATION="westus"
 export ACR_NAME="srinmantest"
 export CA_ENV="items-env"
 export CA_APP="items-api"
