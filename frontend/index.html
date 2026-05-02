@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Items App</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #333; padding: 2rem; }
+    h1 { margin-bottom: 1.5rem; color: #1a73e8; }
+    .card { background: #fff; border-radius: 8px; padding: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,.12); margin-bottom: 1.5rem; }
+    h2 { margin-bottom: 1rem; font-size: 1.1rem; }
+    .form-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: .75rem; }
+    input { flex: 1; min-width: 140px; padding: .5rem .75rem; border: 1px solid #ccc; border-radius: 6px; font-size: .95rem; }
+    button { padding: .5rem 1.2rem; border: none; border-radius: 6px; cursor: pointer; font-size: .95rem; }
+    .btn-primary { background: #1a73e8; color: #fff; }
+    .btn-primary:hover { background: #1558b0; }
+    .btn-danger { background: #e53935; color: #fff; font-size: .8rem; padding: .3rem .7rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid #eee; font-size: .9rem; }
+    th { background: #f0f4ff; }
+    .status { font-size: .85rem; padding: .4rem .8rem; border-radius: 4px; margin-bottom: 1rem; }
+    .status.ok { background: #e6f4ea; color: #2e7d32; }
+    .status.err { background: #fce8e6; color: #c62828; }
+  </style>
+</head>
+<body>
+  <h1>Items App</h1>
+
+  <div id="health-banner"></div>
+
+  <div class="card">
+    <h2>Add Item</h2>
+    <div class="form-row">
+      <input id="name" placeholder="Name" required />
+      <input id="description" placeholder="Description (optional)" />
+      <input id="price" placeholder="Price" type="number" step="0.01" min="0" required />
+    </div>
+    <button class="btn-primary" onclick="addItem()">Add Item</button>
+  </div>
+
+  <div class="card">
+    <h2>Items</h2>
+    <table>
+      <thead><tr><th>Name</th><th>Description</th><th>Price</th><th></th></tr></thead>
+      <tbody id="items-body"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
